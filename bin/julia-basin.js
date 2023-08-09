@@ -23,12 +23,6 @@ async function main(x0, y0) {
   image.setXScale(-2, 2);
   image.setYScale(-2, 2);
 
-  // const color_scale = new ColorScale(
-  //   0,
-  //   MAX_ITERATE,
-  //   new Color(255, 255, 255),
-  //   new Color(0, 0, 0),
-  // );
   const color_scale = new ColorGradient(
     0,
     MAX_ITERATE,
@@ -40,10 +34,7 @@ async function main(x0, y0) {
     ]
   );
 
-  console.log("color_scale",color_scale);
-
   const c = new Complex(x0, y0);
-  console.log(c);
   const x_step = 4 / image.width;
   const y_step = 4 / image.height;
   let px = 0;
@@ -56,7 +47,6 @@ async function main(x0, y0) {
       px++;
     }
   }
-  console.log("px", px);
   const buf = image.to_ppm();
   await fs.promises.writeFile("julia.ppm", buf);
 }
