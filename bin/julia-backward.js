@@ -3,7 +3,6 @@ const fs = require("node:fs");
 const { Color } = require("../lib/color");
 const Complex = require("../lib/complex");
 const Image = require("../lib/image");
-
 const ORBIT_LENGTH = 90000;
 const COLOR = new Color(255, 0, 255);
 
